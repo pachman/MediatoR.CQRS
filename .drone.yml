@@ -9,7 +9,7 @@ steps:
 - name: dotnet-pack
   image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
-  - bash ./pack.sh $DRONE_BUILD_NUMBER
+  - bash ./pack.sh alpha-$DRONE_BUILD_NUMBER
   volumes:
   - name: dotnet_packages_cache
     path: /root/.nuget/packages
