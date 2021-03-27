@@ -10,6 +10,8 @@
         <VersionPrefix>0.0.1</VersionPrefix>
         <Authors>Pachman</Authors>
         <Company>Not a company</Company>
+        <PackageDescription>Simple wrapper for MediatoR</PackageDescription>
+        <RepositoryUrl>https://github.com/pachman/MediatoR.CQRS</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
