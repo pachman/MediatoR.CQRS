@@ -1,3 +1,5 @@
+#!/bin/bash
+
 VERSION_SUFFIX=$1
 
 echo "$VERSION_SUFFIX"

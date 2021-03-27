@@ -9,7 +9,7 @@ steps:
 - name: dotnet-pack
   image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
-  - sh ./pack.sh $DRONE_BUILD_NUMBER
+  - bash ./pack.sh $DRONE_BUILD_NUMBER
   volumes:
   - name: dotnet_packages_cache
     path: /root/.nuget/packages
@@ -17,7 +17,7 @@ steps:
 - name: dotnet-nuget-push
   image: mcr.microsoft.com/dotnet/sdk:5.0
   commands:
-  - sh ./publish.sh $NUGET_API_KEY
+  - bash ./publish.sh $NUGET_API_KEY
   environment:
     NUGET_API_KEY:
       from_secret: nuget_api_key

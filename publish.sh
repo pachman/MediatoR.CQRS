@@ -1,6 +1,10 @@
+#!/bin/bash
+
 API_KEY=$1
 
 cd ./output
+ls
+
 files=$(ls -t *.nupkg | head -1)
 PACKAGE_FILE="${files[0]}"
 
