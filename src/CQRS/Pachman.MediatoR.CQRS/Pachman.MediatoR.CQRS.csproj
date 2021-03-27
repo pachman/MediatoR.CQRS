@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>Pachman.MediatoR.CQRS</RootNamespace>
+        <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Pachman.MediatoR.CQRS</PackageId>
+        <VersionPrefix>0.0.1</VersionPrefix>
+        <Authors>Pachman</Authors>
+        <Company>Not a company</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="9.0.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+kind: pipeline
+type: docker
+name: MediatoR.CQRS
+
+platform:
+  arch: amd64
+
+steps:
+- name: dotnet-pack
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+  commands:
+  - sh ./pack.sh $DRONE_BUILD_NUMBER
+  volumes:
+  - name: dotnet_packages_cache
+    path: /root/.nuget/packages
+
+- name: dotnet-nuget-push
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+  commands:
+  - sh ./publish.sh $NUGET_API_KEY
+  environment:
+    NUGET_API_KEY:
+      from_secret: nuget_api_key
+
+volumes:
+- name: dotnet_packages_cache
+  host:
+    path: /var/lib/dotnet_packages
+
+trigger:
+  branch:
+  - master
+  event:
+  - push
